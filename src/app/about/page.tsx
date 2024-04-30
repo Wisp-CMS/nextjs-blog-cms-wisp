@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import Markdown from "react-markdown";
 
@@ -30,6 +31,7 @@ const Page = async () => {
       <div className="prose lg:prose-lg dark:prose-invert m-auto mt-20 mb-10 blog-content">
         <Markdown>{content}</Markdown>
       </div>
+      <Footer />
     </div>
   );
 };

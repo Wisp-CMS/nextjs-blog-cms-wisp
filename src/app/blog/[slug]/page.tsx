@@ -1,4 +1,5 @@
 import { BlogPostContent } from "@/components/BlogPostContent";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { wisp } from "@/lib/wisp";
 import { notFound } from "next/navigation";
@@ -18,6 +19,7 @@ const Page = async ({ params: { slug } }: { params: Params }) => {
     <div className="container mx-auto px-5">
       <Header />
       <BlogPostContent post={result.post} />
+      <Footer />
     </div>
   );
 };

@@ -6,6 +6,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { config } from "@/config";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 import Link from "next/link";
@@ -19,16 +20,15 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   { name: "Blog", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
 ];
 export const Navigation: FunctionComponent = () => {
   const pathname = usePathname();
 
   return (
     <nav>
-      <div className="hidden md:flex">
+      <div className="hidden md:flex items-center">
         {menuItems.map((item) => (
-          <div key={item.href} className="mr-4 md:mr-8">
+          <div key={item.href} className="ml-4 md:ml-8">
             <a
               href={item.href}
               target={item.openInNewTab ? "_blank" : "_self"}
@@ -77,7 +77,7 @@ export const Header: FunctionComponent = () => {
     <section className="flex items-center justify-between mt-8 md:mt-16 mb-12">
       <Link href="/">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
-          Blog.
+          {config.blog.name}
         </h1>
       </Link>
       <Navigation />
