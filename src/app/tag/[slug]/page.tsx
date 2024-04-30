@@ -4,15 +4,23 @@ import { wisp } from "@/lib/wisp";
 import { CircleX } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { BlogPostsPagination } from "@/components/BlogPostsPagination";
 
 interface Params {
   slug: string;
 }
 
-const Page = async ({ params: { slug } }: { params: Params }) => {
-  const result = await wisp.getPosts({ limit: "all", tags: [slug] });
+const Page = async ({
+  params: { slug },
+  searchParams,
+}: {
+  params: Params;
+  searchParams: { [key: string]: string | string[] | undefined };
+}) => {
+  const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
+  const result = await wisp.getPosts({ limit: 6, tags: [slug], page });
   return (
-    <div className="container mx-auto px-5">
+    <div className="container mx-auto px-5 mb-10">
       <Header />
       <Link href="/">
         <Badge className="px-2 py-1">
@@ -21,6 +29,10 @@ const Page = async ({ params: { slug } }: { params: Params }) => {
         </Badge>
       </Link>
       <BlogPostsPreview posts={result.posts} />
+      <BlogPostsPagination
+        pagination={result.pagination}
+        basePath={`/tag/${slug}/?page=`}
+      />
     </div>
   );
 };
