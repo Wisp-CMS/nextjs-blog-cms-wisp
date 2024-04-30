@@ -73,4 +73,8 @@
     body {
       @apply bg-background text-foreground;
     }
+
+    .blog-content img {
+      @apply w-full;
+    }
   }

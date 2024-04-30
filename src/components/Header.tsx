@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FunctionComponent } from "react";
 interface MenuItem {
@@ -74,9 +75,11 @@ export const Navigation: FunctionComponent = () => {
 export const Header: FunctionComponent = () => {
   return (
     <section className="flex items-center justify-between mt-8 md:mt-16 mb-12">
-      <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
-        Blog.
-      </h1>
+      <Link href="/">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
+          Blog.
+        </h1>
+      </Link>
       <Navigation />
     </section>
   );
