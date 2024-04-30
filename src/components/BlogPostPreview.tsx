@@ -25,10 +25,10 @@ export const BlogPostPreview: FunctionComponent<{
         <h2 className="font-sans font-semibold tracking-tighter text-slate-800 text-2xl md:text-3xl">
           <Link href={`/blog/${post.slug}`}>{post.title}</Link>
         </h2>
-        <div className="font-serif italic tracking-tighter text-slate-500">
+        <div className="prose lg:prose-lg italic tracking-tighter text-slate-500">
           {formatDate(post.updatedAt, "dd MMMM yyyy")}
         </div>
-        <div className="font-serif leading-relaxed md:text-lg line-clamp-4">
+        <div className="prose lg:prose-lg leading-relaxed md:text-lg line-clamp-4">
           {post.description}
         </div>
         <div className="text-sm text-muted-foreground">
