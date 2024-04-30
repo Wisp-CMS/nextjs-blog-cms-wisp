@@ -2,7 +2,10 @@
 
 [![Demo Travel Blog on Next.js 14](https://imagedelivery.net/lLmNeOP7HXG0OqaG97wimw/clvlugru90000o4g8ahxp069s/32432ccf-57a8-4992-8c51-e5a47e110018.png/public "Demo Travel Blog on Next.js 14")](https://nextjs-blog-cms-wisp.vercel.app/)
 
-[Demo Blog](https://nextjs-blog-cms-wisp.vercel.app/)
+**Featured Links**
+- [Demo Blog](https://nextjs-blog-cms-wisp.vercel.app/)
+- [Feature Walkthrough](https://youtu.be/7wVYAGhDmdY)
+- [Editing Experience](https://youtu.be/uSKO8J38T98)
 
 This starter is a blog that uses [Next.js 14](https://nextjs.org/docs/getting-started/installation) for the frontend and [Wisp](https://wisp.blog/?utm_source=github&utm_medium=web&utm_campaign=nextjs-blog-cms-wisp) to handle its content.
 
