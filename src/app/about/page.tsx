@@ -24,6 +24,13 @@ Love,
 
 Samantha`;
 
+export async function generateMetadata() {
+  return {
+    title: "About Me",
+    description: "Learn more about Samantha and her travel adventures",
+  };
+}
+
 const Page = async () => {
   return (
     <div className="container mx-auto px-5">

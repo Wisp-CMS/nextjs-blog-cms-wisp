@@ -11,6 +11,17 @@ interface Params {
   slug: string;
 }
 
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: Params;
+}) {
+  return {
+    title: `#${slug}`,
+    description: `Posts tagged with #${slug}`,
+  };
+}
+
 const Page = async ({
   params: { slug },
   searchParams,

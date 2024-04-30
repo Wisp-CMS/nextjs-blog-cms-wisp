@@ -5,6 +5,13 @@ const buildConfig = () => {
     blog: {
       name: "Travel.",
       copyright: "Samantha",
+      metadata: {
+        title: {
+          absolute: "Travel with Samantha",
+          default: "Travel with Samantha",
+          template: "%s - Travel with Samantha",
+        },
+      }
     },
     wisp: {
       blogId,
