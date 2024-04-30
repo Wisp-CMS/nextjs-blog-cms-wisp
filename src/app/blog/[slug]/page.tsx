@@ -1,5 +1,4 @@
 import { BlogPostContent } from "@/components/BlogPostContent";
-import { BlogPostsPreview } from "@/components/BlogPostPreview";
 import { Header } from "@/components/Header";
 import { wisp } from "@/lib/wisp";
 import { notFound } from "next/navigation";
