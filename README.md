@@ -18,6 +18,14 @@ This starter is a blog that uses [Next.js 14](https://nextjs.org/docs/getting-st
 - About page
 - Dark mode
 
+## Technologies
+
+- [Next.js 14 (App Router)](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [ES Lint](https://eslint.org/)
+- [Typescript](https://www.typescriptlang.org/)
+
 ## Getting Started
 
 First, run the development server:
