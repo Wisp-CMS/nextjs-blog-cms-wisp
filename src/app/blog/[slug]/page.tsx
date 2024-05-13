@@ -1,6 +1,8 @@
 import { BlogPostContent } from "@/components/BlogPostContent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { config } from "@/config";
+import { signOgImageUrl } from "@/lib/og-image";
 import { wisp } from "@/lib/wisp";
 import { notFound } from "next/navigation";
 
@@ -17,6 +19,7 @@ export async function generateMetadata({
   }
 
   const { title, description, image } = result.post;
+  const generatedOgImage = signOgImageUrl({ title, brand: config.blog.name });
 
   return {
     title,
@@ -24,7 +27,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      images: image ? [image] : [],
+      images: image ? [image, generatedOgImage] : [generatedOgImage],
     },
   };
 }
