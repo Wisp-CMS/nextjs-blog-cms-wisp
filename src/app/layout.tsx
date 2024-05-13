@@ -1,9 +1,9 @@
+import { ThemeProvider } from "@/components/theme-provider";
+import { config } from "@/config";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { config } from "@/config";
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     default: config.blog.metadata.title.default,
     template: config.blog.metadata.title.template,
   },
+  description: config.blog.metadata.description,
 };
 
 export default function RootLayout({
