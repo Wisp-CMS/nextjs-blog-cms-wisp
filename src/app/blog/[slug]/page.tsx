@@ -5,6 +5,7 @@ import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import { wisp } from "@/lib/wisp";
 import { notFound } from "next/navigation";
+import type { BlogPosting, WithContext } from "schema-dts";
 
 export async function generateMetadata({
   params: { slug },
@@ -42,12 +43,29 @@ const Page = async ({ params: { slug } }: { params: Params }) => {
     return notFound();
   }
 
+  const { title, publishedAt, updatedAt, image } = result.post;
+
+  const jsonLd: WithContext<BlogPosting> = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    image: image ? image : undefined,
+    datePublished: publishedAt ? publishedAt.toString() : undefined,
+    dateModified: updatedAt.toString(),
+  };
+
   return (
-    <div className="container mx-auto px-5">
-      <Header />
-      <BlogPostContent post={result.post} />
-      <Footer />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="container mx-auto px-5">
+        <Header />
+        <BlogPostContent post={result.post} />
+        <Footer />
+      </div>
+    </>
   );
 };
 
