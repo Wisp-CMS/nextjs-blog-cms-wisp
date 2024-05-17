@@ -26,7 +26,7 @@ export const BlogPostPreview: FunctionComponent<{
           <Link href={`/blog/${post.slug}`}>{post.title}</Link>
         </h2>
         <div className="prose lg:prose-lg italic tracking-tighter text-muted-foreground">
-          {formatDate(post.updatedAt, "dd MMMM yyyy")}
+          {formatDate(post.publishedAt || post.updatedAt, "dd MMMM yyyy")}
         </div>
         <div className="prose lg:prose-lg leading-relaxed md:text-lg line-clamp-4 text-muted-foreground">
           {post.description}
