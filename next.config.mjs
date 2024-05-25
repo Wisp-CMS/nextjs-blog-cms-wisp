@@ -8,6 +8,9 @@ const nextConfig = {
       },
     ],
   },
+  redirects: async () => {
+    return [];
+  },
 };
 
 export default nextConfig;
