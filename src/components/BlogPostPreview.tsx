@@ -10,7 +10,7 @@ export const BlogPostPreview: FunctionComponent<{
   post: GetPostsResult["posts"][0];
 }> = ({ post }) => {
   return (
-    <div>
+    <div className="break-words">
       <Link href={`/blog/${post.slug}`}>
         <div className="aspect-[16/9] relative">
           <Image
