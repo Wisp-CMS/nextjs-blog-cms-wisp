@@ -1,0 +1,11 @@
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>https://example.com/static/sitemap.xml</loc>
+    </sitemap>
+    <sitemap>
+        <loc>https://example.com/blog/sitemap.xml</loc>
+    </sitemap>
+    <sitemap>
+        <loc>https://example.com/tag/sitemap.xml</loc>
+    </sitemap>
+</sitemapindex>
