@@ -27,6 +27,7 @@ Wisp is a modern CMS for adding blogs to websites. It features an intuitive, med
 - Light & dark mode
 - Automatic hierarchical sitemap generation
 - Automatic Open Graph image generation
+- Automatic Related Posts suggestions
 
 ## Technologies
 
