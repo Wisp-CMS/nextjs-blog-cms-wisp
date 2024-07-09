@@ -33,7 +33,7 @@ export const Navigation: FunctionComponent = () => {
               href={item.href}
               target={item.openInNewTab ? "_blank" : "_self"}
               className={cn(
-                "hover:text-gray-900",
+                "hover:bg-[#f4f4f5] dark:hover:bg-[#27272a] p-2 rounded-sm",
                 pathname === item.href && "font-semibold"
               )}
             >
@@ -76,7 +76,7 @@ export const Header: FunctionComponent = () => {
   return (
     <section className="flex items-center justify-between mt-8 md:mt-16 mb-12">
       <Link href="/">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
           {config.blog.name}
         </h1>
       </Link>
