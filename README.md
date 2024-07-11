@@ -41,16 +41,24 @@ Wisp is a modern CMS for adding blogs to websites. It features an intuitive, med
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm i
+```
+
+Then, copy the `.env.example` file to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+Note: You will need to populate the `NEXT_PUBLIC_BLOG_ID` variable with the Blog ID obtained from wisp after you've created an account.
+
+Finally, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
