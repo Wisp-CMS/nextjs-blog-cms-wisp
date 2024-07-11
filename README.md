@@ -9,6 +9,8 @@
 - [Demo Blog](https://nextjs-blog-cms-wisp.vercel.app/)
 - [Feature Walkthrough](https://youtu.be/7wVYAGhDmdY)
 - [Editing Experience](https://youtu.be/uSKO8J38T98)
+- [Documentation](https://www.wisp.blog/docs/next-js-blog-starter-kit/overview)
+- [Video Tutorial](https://www.wisp.blog/docs/next-js-blog-starter-kit/running-blog)
 
 This is a [Next.js](https://nextjs.org/docs/getting-started/installation), [Tailwind CSS](https://tailwindcss.com/), [Shadcn](https://ui.shadcn.com/) blogging starter template. This version is using Next.js 14 App Router with [React Server Components](https://nextjs.org/docs/getting-started/react-essentials#server-components) and uses [Wisp](https://wisp.blog/?utm_source=github&utm_medium=web&utm_campaign=nextjs-blog-cms-wisp) for publishing blog posts.
 
@@ -39,7 +41,17 @@ Wisp is a modern CMS for adding blogs to websites. It features an intuitive, med
 - [TypeScript](https://www.typescriptlang.org/) for type safety
 - Font optimization with [next/font](https://nextjs.org/docs/app/api-reference/components/font)
 
-## Getting Started
+## Step-by-step Video Tutorial
+
+We've now included a 3-part video tutorial to help you run this blog on your computer:
+
+![3-part Video Tutorial to Launch Nextjs Blog](https://imagedelivery.net/lLmNeOP7HXG0OqaG97wimw/cluqyx1rl0000l5ds3f0vkfer/2a92b7b6-9b11-4e41-8719-bad7be99b912.png/public "3-part Video Tutorial to Launch Nextjs Blog")
+
+- [Part 1: Running the Next JS blog (15 min)](https://www.wisp.blog/docs/next-js-blog-starter-kit/running-blog?utm_source=github&utm_medium=web&utm_campaign=nextjs-blog-cms-wisp)
+- [Part 2: Personalizing Your Next.js Blog (15 min)](https://www.wisp.blog/docs/next-js-blog-starter-kit/personalizing-blog?utm_source=github&utm_medium=web&utm_campaign=nextjs-blog-cms-wisp)
+- [Part 3: Deploying Your Next.js Blog (15 min)](https://www.wisp.blog/docs/next-js-blog-starter-kit/deploying-blog?utm_source=github&utm_medium=web&utm_campaign=nextjs-blog-cms-wisp)
+
+## Quick Start Guide
 
 First, install the dependencies:
 
@@ -65,4 +77,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Getting Help
 
-Full documentation on how to get started on wisp as well as this starter kit is available on [wisp's documentation site](https://wisp.blog/docs?utm_source=github&utm_medium=web&utm_campaign=nextjs-blog-cms-wisp)
+Full documentation on how to get started on wisp as well as this starter kit is available on [wisp's documentation site](https://www.wisp.blog/docs/next-js-blog-starter-kit/overview?utm_source=github&utm_medium=web&utm_campaign=nextjs-blog-cms-wisp)
+
