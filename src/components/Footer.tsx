@@ -1,7 +1,10 @@
 "use client";
+import { config } from "@/config";
+import { Rss } from "lucide-react";
+import Link from "next/link";
 import { FunctionComponent } from "react";
 import { DarkModeToggle } from "./DarkModeToggle";
-import { config } from "@/config";
+import { Button } from "./ui/button";
 
 export const Footer: FunctionComponent = () => {
   return (
@@ -9,7 +12,14 @@ export const Footer: FunctionComponent = () => {
       <div className="text-sm text-muted-foreground">
         © {config.blog.copyright} {new Date().getFullYear()}
       </div>
-      <DarkModeToggle />
+      <div>
+        <Link href="/rss">
+          <Button variant="ghost" className="p-2">
+            <Rss className="w-4 h-4" />
+          </Button>
+        </Link>
+        <DarkModeToggle />
+      </div>
     </section>
   );
 };
