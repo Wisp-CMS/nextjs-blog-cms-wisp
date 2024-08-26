@@ -26,7 +26,28 @@ export const PostContent = ({ content }: { content: string }) => {
             "ul",
             "ol",
             "blockquote",
+            "td",
+            "th",
+            "table",
+            "tr",
+            "tbody",
+            "thead",
+            "tfoot",
+            "small",
           ],
+          allowedAttributes: {
+            "*": ["style"],
+            a: ["href", "name", "target"],
+            img: [
+              "src",
+              "srcset",
+              "alt",
+              "title",
+              "width",
+              "height",
+              "loading",
+            ],
+          },
         }),
       }}
     ></div>
