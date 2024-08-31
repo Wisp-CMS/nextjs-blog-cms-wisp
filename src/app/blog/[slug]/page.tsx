@@ -8,11 +8,16 @@ import { wisp } from "@/lib/wisp";
 import { notFound } from "next/navigation";
 import type { BlogPosting, WithContext } from "schema-dts";
 
-export async function generateMetadata({
-  params: { slug },
-}: {
-  params: Params;
-}) {
+export async function generateStaticParams() {
+  // Get all Posts from Wisp so we build Blog Pages during build-time instead of request time
+  // SEO Optimization
+  const results = await wisp.getPosts();
+  return results.posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export async function generateMetadata({ params: { slug } }: { params: Params }) {
   const result = await wisp.getPost(slug);
   if (!result || !result.post) {
     return {
@@ -58,10 +63,7 @@ const Page = async ({ params: { slug } }: { params: Params }) => {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-5">
         <Header />
         <BlogPostContent post={result.post} />
