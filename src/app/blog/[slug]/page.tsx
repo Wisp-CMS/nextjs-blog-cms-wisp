@@ -45,7 +45,7 @@ const Page = async ({ params: { slug } }: { params: Params }) => {
     return notFound();
   }
 
-  const { title, publishedAt, updatedAt, image } = result.post;
+  const { title, publishedAt, updatedAt, image, author } = result.post;
 
   const jsonLd: WithContext<BlogPosting> = {
     "@context": "https://schema.org",
@@ -54,6 +54,11 @@ const Page = async ({ params: { slug } }: { params: Params }) => {
     image: image ? image : undefined,
     datePublished: publishedAt ? publishedAt.toString() : undefined,
     dateModified: updatedAt.toString(),
+    author: {
+      "@type": "Person",
+      name: author.name ?? undefined,
+      image: author.image ?? undefined,
+    },
   };
 
   return (
