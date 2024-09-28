@@ -23,9 +23,9 @@ export const DarkModeToggle = () => {
   return (
     <Button variant="ghost" onClick={toggleDarkMode} className="p-2">
       {resolvedTheme === "dark" ? (
-        <Moon className="w-4 h-4" />
+        <Moon className="w-6 h-6" />
       ) : (
-        <Sun className="w-4 h-4" />
+        <Sun className="w-6 h-6" />
       )}
     </Button>
   );

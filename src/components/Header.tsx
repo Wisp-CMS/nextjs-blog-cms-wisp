@@ -1,4 +1,5 @@
 "use client";
+import { DarkModeToggle } from "@/components/DarkModeToggle";
 import {
   Sheet,
   SheetContent,
@@ -26,8 +27,8 @@ export const Navigation: FunctionComponent = () => {
 
   return (
     <nav>
-      <div className="hidden md:flex items-center">
-        {menuItems.map((item) => (
+      <div className=" md:flex items-center">
+        {/* {menuItems.map((item) => (
           <div key={item.href} className="ml-4 md:ml-8">
             <a
               href={item.href}
@@ -40,9 +41,10 @@ export const Navigation: FunctionComponent = () => {
               {item.name}
             </a>
           </div>
-        ))}
+        ))} */}
+        <DarkModeToggle />
       </div>
-      <div className="md:hidden">
+      {/* <div className="md:hidden">
         <Sheet>
           <SheetTrigger>
             <Menu size="24" />
@@ -67,7 +69,7 @@ export const Navigation: FunctionComponent = () => {
             </SheetHeader>
           </SheetContent>
         </Sheet>
-      </div>
+      </div> */}
     </nav>
   );
 };
