@@ -6,7 +6,7 @@
 
 **Featured Links**
 
-- [Demo Blog](https://nextjs-blog-cms-wisp.vercel.app/)
+- [Demo Blog](https://blog-demo.wisp.blog/)
 - [Feature Walkthrough](https://youtu.be/7wVYAGhDmdY)
 - [Editing Experience](https://youtu.be/uSKO8J38T98)
 - [Documentation](https://www.wisp.blog/docs/next-js-blog-starter-kit/overview)
@@ -80,3 +80,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Full documentation on how to get started on wisp as well as this starter kit is available on [wisp's documentation site](https://www.wisp.blog/docs/next-js-blog-starter-kit/overview?utm_source=github&utm_medium=web&utm_campaign=nextjs-blog-cms-wisp)
 
+## Other template
+
+Like this template?
+
+Check out our [corporate blog template here](https://github.com/Wisp-CMS/nextjs-corporate-blog-starter).
