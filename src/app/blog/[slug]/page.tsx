@@ -8,11 +8,17 @@ import { wisp } from "@/lib/wisp";
 import { notFound } from "next/navigation";
 import type { BlogPosting, WithContext } from "schema-dts";
 
-export async function generateMetadata({
-  params: { slug },
-}: {
-  params: Params;
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<Params>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const result = await wisp.getPost(slug);
   if (!result || !result.post) {
     return {
@@ -37,7 +43,13 @@ interface Params {
   slug: string;
 }
 
-const Page = async ({ params: { slug } }: { params: Params }) => {
+const Page = async (props: { params: Promise<Params> }) => {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const result = await wisp.getPost(slug);
   const { posts } = await wisp.getRelatedPosts({ slug, limit: 3 });
 

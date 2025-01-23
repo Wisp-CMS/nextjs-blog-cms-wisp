@@ -1,10 +1,10 @@
-import { ThemeProvider } from "@/components/theme-provider";
 import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
       signOgImageUrl({
         title: config.blog.name,
       }),
-    ]
-  }
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -39,14 +39,9 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Providers>
           <main>{children}</main>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
