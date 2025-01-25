@@ -1,4 +1,5 @@
 import { BlogPostContent } from "@/components/BlogPostContent";
+import { CommentSection } from "@/components/CommentSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { RelatedPosts } from "@/components/RelatedPosts";
@@ -8,16 +9,10 @@ import { wisp } from "@/lib/wisp";
 import { notFound } from "next/navigation";
 import type { BlogPosting, WithContext } from "schema-dts";
 
-export async function generateMetadata(
-  props: {
-    params: Promise<Params>;
-  }
-) {
+export async function generateMetadata(props: { params: Promise<Params> }) {
   const params = await props.params;
 
-  const {
-    slug
-  } = params;
+  const { slug } = params;
 
   const result = await wisp.getPost(slug);
   if (!result || !result.post) {
@@ -46,9 +41,7 @@ interface Params {
 const Page = async (props: { params: Promise<Params> }) => {
   const params = await props.params;
 
-  const {
-    slug
-  } = params;
+  const { slug } = params;
 
   const result = await wisp.getPost(slug);
   const { posts } = await wisp.getRelatedPosts({ slug, limit: 3 });
@@ -81,8 +74,11 @@ const Page = async (props: { params: Promise<Params> }) => {
       />
       <div className="container mx-auto px-5">
         <Header />
-        <BlogPostContent post={result.post} />
-        <RelatedPosts posts={posts} />
+        <div className="max-w-prose mx-auto text-xl">
+          <BlogPostContent post={result.post} />
+          <RelatedPosts posts={posts} />
+          <CommentSection slug={slug} />
+        </div>
         <Footer />
       </div>
     </>
