@@ -11,24 +11,36 @@ interface Params {
   slug: string;
 }
 
-export async function generateMetadata({
-  params: { slug },
-}: {
-  params: Params;
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<Params>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   return {
     title: `#${slug}`,
     description: `Posts tagged with #${slug}`,
   };
 }
 
-const Page = async ({
-  params: { slug },
-  searchParams,
-}: {
-  params: Params;
-  searchParams: { [key: string]: string | string[] | undefined };
-}) => {
+const Page = async (
+  props: {
+    params: Promise<Params>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  }
+) => {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
   const result = await wisp.getPosts({ limit: 6, tags: [slug], page });
   return (
