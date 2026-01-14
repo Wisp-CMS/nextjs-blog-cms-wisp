@@ -4,7 +4,7 @@ import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import Markdown from "react-markdown";
 
-const content = `# About Me
+const content = `# Kıbrıs Gece Kulübü
 
 ![Samantha](https://imagedelivery.net/lLmNeOP7HXG0OqaG97wimw/clvlugru90000o4g8ahxp069s/db7abbe3-aa5c-433e-a16d-cbf137d1c9e5.png/public)
 
@@ -28,15 +28,15 @@ Samantha`;
 
 export async function generateMetadata() {
   return {
-    title: "About Me",
-    description: "Learn more about Samantha and her travel adventures",
+    title: "Hakkımızda",
+    description: "Kıbrıs gece kulübü bayan katalog ve güncel fiyatları",
     openGraph: {
-      title: "About Me",
-      description: "Learn more about Samantha and her travel adventures",
+      title: "Hakkımızda",
+      description: "Kıbrıs gece kulübü bayan katalog ve güncel fiyatları",
       images: [
         signOgImageUrl({
-          title: "Samantha",
-          label: "About Me",
+          title: "Kıbrıs Bayan Katalog",
+          label: "Hakkımızda",
           brand: config.blog.name,
         }),
       ],
